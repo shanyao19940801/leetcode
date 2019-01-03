@@ -13,4 +13,26 @@ package com.leetcode;
 说明: 请不要使用除法，且在 O(n) 时间复杂度内完成此题。
 * */
 public class Solution_238 {
+    public int[] productExceptSelf(int[] nums) {
+        int length = nums.length;
+        int[] l = new int[length];
+        int[] r = new int[length];
+        int left = 1;
+        int right = 1;
+
+        for(int i = 0; i < length; i++) {
+            l[i] = left;
+            left *= nums[i];
+        }
+
+        for(int j = length -1; j >=0; j--) {
+            r[j] = right;
+            right *= nums[j];
+        }
+
+        for(int i = 0; i < length; i++) {
+            nums[i] = l[i] * r[i];
+        }
+        return nums;
+    }
 }
