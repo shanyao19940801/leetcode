@@ -1,4 +1,3 @@
-package com.leetcode;
 /*
 * 238. 除自身以外数组的乘积
 *
